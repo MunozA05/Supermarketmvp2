@@ -77,8 +77,8 @@ namespace Supermarket_mvp.Views
 
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabPageProductList);
-                    tabControl1.TabPages.Add(tabPageProductDetail);
+                    tabControl1.TabPages.Remove(tabPageProductDetail);
+                    tabControl1.TabPages.Add(tabPageProductList);
                 }
 
                 MessageBox.Show(Message);
@@ -88,8 +88,8 @@ namespace Supermarket_mvp.Views
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
 
-                tabControl1.TabPages.Remove(tabPageProductList);
-                tabControl1.TabPages.Add(tabPageProductDetail);
+                tabControl1.TabPages.Remove(tabPageProductDetail);
+                tabControl1.TabPages.Add(tabPageProductList);
             };
         }
         
