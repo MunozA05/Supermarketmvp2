@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Alejandro\\OneDrive\\Escritorio\\Supermarketmvp2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A31AE202-4637-496A-A256-15F5C6F0AFA3}|Supermarketmvp2.csproj|c:\\users\\alejandro\\onedrive\\escritorio\\supermarketmvp2\\models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A31AE202-4637-496A-A256-15F5C6F0AFA3}|Supermarketmvp2.csproj|solutionrelative:models\\categorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A31AE202-4637-496A-A256-15F5C6F0AFA3}|Supermarketmvp2.csproj|c:\\users\\alejandro\\onedrive\\escritorio\\supermarketmvp2\\views\\ipaymodeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A31AE202-4637-496A-A256-15F5C6F0AFA3}|Supermarketmvp2.csproj|solutionrelative:views\\ipaymodeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -27,12 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CategoryModel.cs",
+              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive\\Escritorio\\Supermarketmvp2\\Models\\CategoryModel.cs",
+              "RelativeDocumentMoniker": "Models\\CategoryModel.cs",
+              "ToolTip": "C:\\Users\\Alejandro\\OneDrive\\Escritorio\\Supermarketmvp2\\Models\\CategoryModel.cs",
+              "RelativeToolTip": "Models\\CategoryModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T18:30:37.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "IPayModeView.cs",
               "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive\\Escritorio\\Supermarketmvp2\\Views\\IPayModeView.cs",
               "RelativeDocumentMoniker": "Views\\IPayModeView.cs",
               "ToolTip": "C:\\Users\\Alejandro\\OneDrive\\Escritorio\\Supermarketmvp2\\Views\\IPayModeView.cs",
               "RelativeToolTip": "Views\\IPayModeView.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-18T22:27:10.533Z",
               "EditorCaption": ""

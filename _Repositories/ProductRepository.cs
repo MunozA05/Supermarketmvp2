@@ -16,7 +16,7 @@ namespace Supermarket_mvp._Repositories
         }
 
 
-        public void Add(ProductModel product)
+        public void Add(ProductModel productModel)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -24,11 +24,11 @@ namespace Supermarket_mvp._Repositories
                     connection.Open();
                     command.Connection = connection;
                     command.CommandText = "INSERT INTO Product VALUES (@product_name, @category_Id, @provider_Id, @price, @stock_Quantity)";
-                    command.Parameters.Add("@product_name", SqlDbType.NVarChar).Value = product.ProductName;
-                    command.Parameters.Add("@category_Id", SqlDbType.Int).Value = product.CategoryId;
-                    command.Parameters.Add("@provider_Id", SqlDbType.Int).Value = product.ProviderId;
-                    command.Parameters.Add("@price", SqlDbType.Decimal).Value = product.Price;
-                    command.Parameters.Add("@stock_Quantity", SqlDbType.Int).Value = product.StockQuantity;
+                    command.Parameters.Add("@product_name", SqlDbType.NVarChar).Value = productModel.ProductName;
+                    command.Parameters.Add("@category_Id", SqlDbType.Int).Value = productModel.CategoryId;
+                    command.Parameters.Add("@provider_Id", SqlDbType.Int).Value = productModel.ProviderId;
+                    command.Parameters.Add("@price", SqlDbType.Decimal).Value = productModel.Price;
+                    command.Parameters.Add("@stock_Quantity", SqlDbType.Int).Value = productModel.StockQuantity;
                     command.ExecuteNonQuery();                
             }
         }
@@ -78,7 +78,7 @@ namespace Supermarket_mvp._Repositories
             {                
                     connection.Open();
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Product ORDER BY Product_Mode_Id DESC";
+                    command.CommandText = "SELECT * FROM Product ORDER BY Product_Id DESC";
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())

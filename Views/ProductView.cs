@@ -15,8 +15,7 @@ namespace Supermarket_mvp.Views
         private bool isEdit;
         private bool isSuccessful;
         private string message;
-        public BindingSource ProductList { get; set; }
-
+        
         public ProductView()
         {
             InitializeComponent();
@@ -93,15 +92,11 @@ namespace Supermarket_mvp.Views
                 tabControl1.TabPages.Add(tabPageProductDetail);
             };
         }
-        public void ShowMessage(string message)
+        
+        public string ProductId
         {
-            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        public int ProductId
-        {
-            get { return Convert.ToInt32(TxtProductId.Text); }
-            set { TxtProductId.Text = value.ToString(); }
+            get { return TxtProductId.Text; }
+            set { TxtProductId.Text = value; }
         }
 
         public string ProductName
@@ -110,27 +105,27 @@ namespace Supermarket_mvp.Views
             set { TxtProductName.Text = value; }
         }
 
-        public int CategoryId
+        public string CategoryId
         {
-            get { return Convert.ToInt32(TxtProductCategory.SelectedValue); }
+            get { return TxtProductCategory.Text; }
             set { TxtProductCategory.SelectedValue = value; }
         }
 
-        public int ProviderId
+        public string ProviderId
         {
-            get { return Convert.ToInt32(TxtProductProvider.SelectedValue); }
+            get { return TxtProductProvider.Text; }
             set { TxtProductProvider.SelectedValue = value; }
         }
 
-        public decimal Price
+        public string Price
         {
-            get { return Convert.ToDecimal(TxtProductPrice.Text); }
+            get { return TxtProductPrice.Text; }
             set { TxtProductPrice.Text = value.ToString(); }
         }
 
-        public int StockQuantity
+        public string StockQuantity
         {
-            get { return Convert.ToInt32(TxtProductStockQuantity.Text); }
+            get { return TxtProductStockQuantity.Text; }
             set { TxtProductStockQuantity.Text = value.ToString(); }
         }
 
