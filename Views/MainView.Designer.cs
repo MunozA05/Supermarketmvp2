@@ -30,8 +30,9 @@
         {
             BtnPayMode = new Button();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            BtnProduct = new Button();
             BtnExit = new Button();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(BtnPayMode);
@@ -57,16 +59,15 @@
             panel1.Size = new Size(200, 450);
             panel1.TabIndex = 2;
             // 
-            // pictureBox1
+            // BtnProduct
             // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Image = Properties.Resources.sell;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 62);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            BtnProduct.BackgroundImage = Properties.Resources.products;
+            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProduct.Location = new Point(0, 153);
+            BtnProduct.Name = "BtnProduct";
+            BtnProduct.Size = new Size(200, 95);
+            BtnProduct.TabIndex = 4;
+            BtnProduct.UseVisualStyleBackColor = true;
             // 
             // BtnExit
             // 
@@ -78,6 +79,17 @@
             BtnExit.Size = new Size(200, 95);
             BtnExit.TabIndex = 3;
             BtnExit.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Image = Properties.Resources.sell;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // MainView
             // 
@@ -99,5 +111,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button BtnExit;
+        private Button BtnProduct;
     }
 }

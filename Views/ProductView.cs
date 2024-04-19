@@ -93,10 +93,10 @@ namespace Supermarket_mvp.Views
             };
         }
 
-        public int ProductID
+        public int ProductId
         {
-            get { return Convert.ToInt32(TxtProductID.Text); }
-            set { TxtProductID.Text = value.ToString(); }
+            get { return Convert.ToInt32(TxtProductId.Text); }
+            set { TxtProductId.Text = value.ToString(); }
         }
 
         public string ProductName
@@ -107,26 +107,26 @@ namespace Supermarket_mvp.Views
 
         public int CategoryId
         {
-            get { return Convert.ToInt32(ComboCategory.SelectedValue); }
-            set { ComboCategory.SelectedValue = value; }
+            get { return Convert.ToInt32(TxtProductCategory.SelectedValue); }
+            set { TxtProductCategory.SelectedValue = value; }
         }
 
         public int ProviderId
         {
-            get { return Convert.ToInt32(ComboProvider.SelectedValue); }
-            set { ComboProvider.SelectedValue = value; }
+            get { return Convert.ToInt32(TxtProductProvider.SelectedValue); }
+            set { TxtProductProvider.SelectedValue = value; }
         }
 
         public decimal Price
         {
-            get { return Convert.ToDecimal(TxtPrice.Text); }
-            set { TxtPrice.Text = value.ToString(); }
+            get { return Convert.ToDecimal(TxtProductPrice.Text); }
+            set { TxtProductPrice.Text = value.ToString(); }
         }
 
         public int StockQuantity
         {
-            get { return Convert.ToInt32(TxtStockQuantity.Text); }
-            set { TxtStockQuantity.Text = value.ToString(); }
+            get { return Convert.ToInt32(TxtProductStockQuantity.Text); }
+            set { TxtProductStockQuantity.Text = value.ToString(); }
         }
 
         public string SearchValue

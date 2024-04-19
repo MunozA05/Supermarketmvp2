@@ -45,10 +45,9 @@ namespace Supermarket_mvp.Presenters
 
         private void SearchProduct(object sender, EventArgs e)
         {
-            bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
-            if (!emptyValue)
+            if (!string.IsNullOrWhiteSpace(this.view.SearchValue))
             {
-                productList = repository.GetByValues(this.view.SearchValue);
+                productList = repository.Search(this.view.SearchValue);
             }
             else
             {
@@ -65,8 +64,8 @@ namespace Supermarket_mvp.Presenters
         private void SaveProduct(object sender, EventArgs e)
         {
             var product = new ProductModel();
-            product.ProductID = view.ProductID;
-            product.ProductName = view.ProductName;
+            product.Id = view.ProductId;
+            product.Name = view.ProductName;
             product.CategoryId = view.CategoryId;
             product.ProviderId = view.ProviderId;
             product.Price = view.Price;
@@ -98,7 +97,7 @@ namespace Supermarket_mvp.Presenters
 
         private void CleanViewFields()
         {
-            view.ProductID = 0;
+            view.ProductId = 0;
             view.ProductName = "";
             view.CategoryId = 0;
             view.ProviderId = 0;
@@ -110,8 +109,8 @@ namespace Supermarket_mvp.Presenters
         {
             var product = (ProductModel)productBindingSource.Current;
 
-            view.ProductID = product.ProductID;
-            view.ProductName = product.ProductName;
+            view.ProductId = product.Id;
+            view.ProductName = product.Name;
             view.CategoryId = product.CategoryId;
             view.ProviderId = product.ProviderId;
             view.Price = product.Price;
@@ -126,7 +125,7 @@ namespace Supermarket_mvp.Presenters
             {
                 var product = (ProductModel)productBindingSource.Current;
 
-                repository.Delete(product.ProductID);
+                repository.Delete(product.Id);
                 view.IsSuccessful = true;
                 view.Message = "Product deleted successfully";
                 LoadAllProductList();
