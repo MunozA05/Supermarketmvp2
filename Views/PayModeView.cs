@@ -10,23 +10,64 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.Views
 {
-    public partial class PayModeView : Form , IPayModeView
+    public partial class PayModeView : Form, IPayModeView
     {
         private bool isEdit;
-        private bool isSuccesful;
+        private bool isSuccessful;
         private string message;
         public PayModeView()
         {
             InitializeComponent();
-        }
+            AssociateAndRaiseViwEvents();
 
-        public string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PayModeName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PayModeObservation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsEdit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsSuccesful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+            tabControl1.TabPages.Remove(tabPagePayModeDetail);
+        }
+        private void AssociateAndRaiseViwEvents()
+        {
+            BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            TxtSearch.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    SearchEvent?.Invoke(this, EventArgs.Empty);
+                }
+            };
+        }
+        public string PayModeId 
+        {
+            get { return TxtPayModeId.Text; }
+            set { TxtPayModeId.Text = value; }
+        }
+        public string PayModeName
+        {
+            get { return TxtPayModeName.Text; }
+            set { TxtPayModeName.Text = value; }
+        }
+        public string PayModeObservation 
+        {
+            get { return TxtPayModeObservation.Text; }
+            set { TxtPayModeObservation.Text = value; }
+        }
+        public string SearchValue 
+        {
+            get { return TxtSearch.Text; }
+            set { TxtSearch.Text = value; }
+        }
+        public bool IsEdit 
+        {
+            get { return isEdit; }
+            set { isEdit = value; }
+        }
+        public bool IsSuccessful
+        {
+            get { return isSuccessful; }
+            set { isSuccessful = value; }
+        }
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
 
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
@@ -40,47 +81,23 @@ namespace Supermarket_mvp.Views
             DgPayMode.DataSource = payModeList;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+        private static PayModeView instance;
 
-        }
-        public string SearchValue
+        public static PayModeView GetInstance()
         {
-            get { return TxtSearch.Text; }
-            set { TxtSearch.Text = value;}
-        }
-        public bool IsEdit
-        {
-            get { return isEdit; }
-            set { isEdit = value; }
-        }
-        public bool IsSuccesful
-        {
-            get { return isSuccesful; }
-            set { isSuccesful = value; }
-        }
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
-        }
-        public PayModeView()
-        {
-            InitializeComponent();
-            AssociateAndRaiseViewEvents();
-        }
-
-        private void AssociateAndRaiseViewEvents()
-        {
-            BtnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
-            TxtSearch.KeyDown += (s, e) =>
+            if (instance == null || instance.IsDisposed)
             {
-                if (e.KeyCode == Keys.Enter)
+                instance = new PayModeView();
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
                 {
-                    SearchEvent?.Invoke(this,EventArgs.Empty);
+                    instance.WindowState = FormWindowState.Normal;
                 }
-            };
+                instance.BringToFront();
+            }
+            return instance;
         }
-
     }
 }
