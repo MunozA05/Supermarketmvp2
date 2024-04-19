@@ -12,7 +12,7 @@ namespace Supermarket_mvp._Repositories
 {
     internal class PayModeRepository : BaseRepository, IPayModeRepository
     {
-        public PayModeRepository(string connectionString) : base(connectionString)
+        public PayModeRepository(string connectionString) 
         {
             this.connectionString = connectionString;
         }

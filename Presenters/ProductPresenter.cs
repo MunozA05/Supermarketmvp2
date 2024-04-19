@@ -39,10 +39,8 @@ namespace Supermarket_mvp.Presenters
 
         private void LoadAllProductList()
         {
-            var productList = repository.GetAll().ToList(); 
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = productList;
-            view.SetProductListBildingSource(bindingSource);
+            productList = repository.GetAll();
+            productBindingSource.DataSource = productList;  
         }
 
         private void SearchProduct(object sender, EventArgs e)
@@ -66,7 +64,7 @@ namespace Supermarket_mvp.Presenters
         private void SaveProduct(object sender, EventArgs e)
         {
             var product = new ProductModel();
-            product.ProductId = view.ProductId;
+            product.ProductId = Convert.ToInt32(view.ProductId);
             product.ProductName = view.ProductName;
             product.CategoryId = view.CategoryId;
             product.ProviderId = view.ProviderId;
@@ -107,11 +105,11 @@ namespace Supermarket_mvp.Presenters
             view.StockQuantity = 0;
         }
 
-        private void LoadSelectProductToEdit(object sender, EventArgs e)
+        private void LoadSelectProductToEdit(object? sender, EventArgs e)
         {
             var product = (ProductModel)productBindingSource.Current;
 
-            view.ProductId = product.ProductId;
+            view.ProductId = product.ProductId.ToString();
             view.ProductName = product.ProductName;
             view.CategoryId = product.CategoryId;
             view.ProviderId = product.ProviderId;

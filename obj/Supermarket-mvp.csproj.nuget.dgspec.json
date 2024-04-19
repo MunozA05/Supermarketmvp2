@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\F\\Documents\\2_Lenguaje informatico\\supermarket-mvp\\Supermarket-mvp.csproj": {}
+    "C:\\Users\\USUARIO\\Documents\\Proyectos\\Supermarket-mvp\\Supermarket-mvp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\F\\Documents\\2_Lenguaje informatico\\supermarket-mvp\\Supermarket-mvp.csproj": {
+    "C:\\Users\\USUARIO\\Documents\\Proyectos\\Supermarket-mvp\\Supermarket-mvp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\F\\Documents\\2_Lenguaje informatico\\supermarket-mvp\\Supermarket-mvp.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Proyectos\\Supermarket-mvp\\Supermarket-mvp.csproj",
         "projectName": "Supermarket-mvp",
-        "projectPath": "C:\\Users\\F\\Documents\\2_Lenguaje informatico\\supermarket-mvp\\Supermarket-mvp.csproj",
-        "packagesPath": "C:\\Users\\F\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\F\\Documents\\2_Lenguaje informatico\\supermarket-mvp\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\Documents\\Proyectos\\Supermarket-mvp\\Supermarket-mvp.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\Documents\\Proyectos\\Supermarket-mvp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\F\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
