@@ -30,7 +30,7 @@ namespace Supermarket_mvp._Repositories
             }
         }
 
-        public void Delete(PayModeModel payModeModel)
+        public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -42,6 +42,8 @@ namespace Supermarket_mvp._Repositories
                 command.ExecuteNonQuery ();
             }
         }
+
+       
 
         public void Edit(PayModeModel payModeModel)
         {

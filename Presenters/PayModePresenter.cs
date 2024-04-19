@@ -121,7 +121,7 @@ namespace Supermarket_mvp.Presenters
                 view.Message = "Pay Mode deleted successfully";
                 LoadAllPayModeList();
             }
-            catch
+            catch (Exception ex)
             {
                 view.IsSuccessful = false ;
                 view.Message = "An error ocurrend, could not delete pay mode";

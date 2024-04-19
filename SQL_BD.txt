@@ -1,0 +1,54 @@
+use Supermarket
+create table PayMode
+(
+ Pay_Mode_Id int identity (100000,1) primary key,
+ Pay_Mode_Name nvarchar (50) not null,
+ Pay_Mode_Observation nvarchar (50) not null,
+)
+go
+insert into PayMode values('Cash', 'Cash mode')
+insert into PayMode values('Credit card', 'Credit card mode')
+
+
+use Supermarket
+create table Category
+(
+ Category_Id int identity (200000,1) primary key,
+ Category_Name nvarchar (100) not null,
+ Category_Description nvarchar (100) not null
+)
+go
+insert into Category values('Electronics', 'Electronic products')
+insert into Category values('Clothing', 'Clothing products')
+
+
+
+use Supermarket
+create table Provider
+(
+ Provider_Id int identity (400000,1) primary key,
+ Provider_Name nvarchar (100) not null,
+ Provider_Contact_Name nvarchar (100) not null,
+ Provider_Contact_Phone nvarchar (20) not null,
+ Provider_Email nvarchar (100) not null
+)
+go
+insert into Provider values('Provider 1', 'Contact 1', '123456789', 'contact1@example.com')
+insert into Provider values('Provider 2', 'Contact 2', '987654321', 'contact2@example.com')
+
+
+
+use Supermarket
+create table Product
+(
+ Product_Id int identity (300000,1) primary key,
+ Product_Name nvarchar (100) not null,
+ Category_Id int not null,
+ Provider_Id int not null,
+ Price decimal(18,2) not null,
+ Stock_Quantity int not null
+)
+go
+insert into Product values('Smartphone', 1, 1, 500, 100)
+insert into Product values('Laptop', 1, 2, 1000, 50)
+

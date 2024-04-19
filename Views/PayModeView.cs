@@ -72,8 +72,8 @@ namespace Supermarket_mvp.Views
 
                 if (isSuccessful)
                 {
-                    tabControl1.TabPages.Remove(tabPagePayModeList);
-                    tabControl1.TabPages.Add(tabPagePayModeDetail);
+                    tabControl1.TabPages.Remove(tabPagePayModeDetail);
+                    tabControl1.TabPages.Add(tabPagePayModeList);
                 }
                 MessageBox.Show(Message);
             };
