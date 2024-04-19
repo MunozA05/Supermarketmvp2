@@ -15,6 +15,7 @@ namespace Supermarket_mvp.Views
         private bool isEdit;
         private bool isSuccessful;
         private string message;
+        public BindingSource ProductList { get; set; }
 
         public ProductView()
         {
@@ -91,6 +92,10 @@ namespace Supermarket_mvp.Views
                 tabControl1.TabPages.Remove(tabPageProductList);
                 tabControl1.TabPages.Add(tabPageProductDetail);
             };
+        }
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public int ProductId

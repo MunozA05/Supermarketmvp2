@@ -11,12 +11,12 @@ namespace Supermarket_mvp.Models
     internal class ProductModel
     {
         [DisplayName("Product ID")]
-        public int Id { get; set; }
+        public int ProductId { get; set; }
 
         [DisplayName("Product Name")]
         [Required(ErrorMessage = "Product name is required")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Product name must be between 3 and 100 characters")]
-        public string Name { get; set; }
+        public string ProductName { get; set; }
 
         [DisplayName("Category")]
         [Required(ErrorMessage = "Category is required")]

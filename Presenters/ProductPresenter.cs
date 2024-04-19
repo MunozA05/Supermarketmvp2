@@ -39,8 +39,10 @@ namespace Supermarket_mvp.Presenters
 
         private void LoadAllProductList()
         {
-            productList = repository.GetAll();
-            productBindingSource.DataSource = productList;
+            var productList = repository.GetAll().ToList(); 
+            var bindingSource = new BindingSource();
+            bindingSource.DataSource = productList;
+            view.SetProductListBildingSource(bindingSource);
         }
 
         private void SearchProduct(object sender, EventArgs e)
@@ -64,8 +66,8 @@ namespace Supermarket_mvp.Presenters
         private void SaveProduct(object sender, EventArgs e)
         {
             var product = new ProductModel();
-            product.Id = view.ProductId;
-            product.Name = view.ProductName;
+            product.ProductId = view.ProductId;
+            product.ProductName = view.ProductName;
             product.CategoryId = view.CategoryId;
             product.ProviderId = view.ProviderId;
             product.Price = view.Price;
@@ -109,8 +111,8 @@ namespace Supermarket_mvp.Presenters
         {
             var product = (ProductModel)productBindingSource.Current;
 
-            view.ProductId = product.Id;
-            view.ProductName = product.Name;
+            view.ProductId = product.ProductId;
+            view.ProductName = product.ProductName;
             view.CategoryId = product.CategoryId;
             view.ProviderId = product.ProviderId;
             view.Price = product.Price;
@@ -125,7 +127,7 @@ namespace Supermarket_mvp.Presenters
             {
                 var product = (ProductModel)productBindingSource.Current;
 
-                repository.Delete(product.Id);
+                repository.Delete(product.ProductId);
                 view.IsSuccessful = true;
                 view.Message = "Product deleted successfully";
                 LoadAllProductList();
@@ -140,6 +142,10 @@ namespace Supermarket_mvp.Presenters
         private void AddNewProduct(object sender, EventArgs e)
         {
             view.IsEdit = false;
+        }
+        public void ShowMessage(string message)
+        {
+            view.Message = message;
         }
     }
 }

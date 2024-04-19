@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Supermarket_mvp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,9 @@ namespace Supermarket_mvp.Views
         bool IsEdit { get; set; }
         bool IsSuccessful { get; set; }
         string Message { get; set; }
+        BindingSource ProductList { get; set; }
+
+        
 
         event EventHandler SearchEvent;
         event EventHandler AddNewEvent;
@@ -29,5 +33,6 @@ namespace Supermarket_mvp.Views
 
         void SetProductListBildingSource(BindingSource productList);
         void Show();
+        void ShowMessage(string message);
     }
 }
