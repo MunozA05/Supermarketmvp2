@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Views",
     "\\_Repositories"
   ],
-  "SelectedNode": "\\Supermarketmvp2.sln",
+  "SelectedNode": "\\Views\\IProvidersView.cs",
   "PreviewInSolutionExplorer": false
 }
